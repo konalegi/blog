@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app='blog'>
+<head>
+  <title>Super Blog App</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+
+
+<div id="navBar" ng-controller="NavBarCtl">
+  <div class="blog-masthead">
+    <div class="container">
+      <nav class="blog-nav">
+        <a ng-repeat="item in navList" class="blog-nav-item" ng-class="{active:item.active}" href="#{{item.url}}">{{item.title}}</a>
+          <!--<a ng-class="{active:item.active}" href="#{{item.url}}">{{item.title}}</a>-->
+        <!--</a>-->
+
+        <!--<a href="#" class="blog-nav-item active">Home</a>-->
+        <!--<a href="#/newpost" class="blog-nav-item">New Post</a>-->
+        <!--<a href="#/register" class="blog-nav-item">Register</a>-->
+        <!--<a href="#/login" class="blog-nav-item">Login</a>-->
+        <!--<a href="#" class="blog-nav-item">About</a>-->
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <div ng-view="">
+
+  </div>
+
+
+
+
+<div class="blog-footer">
+<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+<p>
+  <a href="#">Back to top</a>
+</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="container" >
+
+
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{currentPost.title}}</h2>
+        <p class="blog-post-meta">{{currentPost.created_at}} by <a href="#">{{currentPost.user_name}}</a></p>
+        {{currentPost.text_data}}
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="blog-post" ng-repeat="comment in currentPost.comments">
+      <div class="blog-post-meta">{{comment.created_at}} by <a href="#">{{comment.user_name}}</a></div>
+      <p>{{comment.text_data}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+
+      <div><textarea class="form-control" rows="4" ng-model="newComment.textData" /></div>
+      <button ng-click="createComment(currentPost.id)" class="btn btn-primary" >Comment it!</button>
+    </div>
+  </div>
+
+</div>

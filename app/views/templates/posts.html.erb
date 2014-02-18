@@ -1,0 +1,29 @@
+<div class="container" >
+
+  <div class="blog-header">
+    <h2 class="blog-title">Super blog app</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+
+      <div class="blog-post" ng-repeat="post in allPosts">
+        <h2 class="blog-post-title"><a href="" ng-click="openPost(post.id)">{{post.title}}</a> </h2>
+        <p class="blog-post-meta">{{post.created_at}} by <a href="">{{post.user_name}}</a></p>
+
+        {{post.text_data}}
+        <div ng-show="{{post.signed}}"><a href="" ng-click="deletePost(post.id,$index)">Delete</a></div>
+        <div ng-show="{{post.signed}}"><a href="" ng-click="editPost(post.id,$index)">Edit</a></div>
+      </div>
+      <!--<ul class="pager">-->
+        <!--<li><a href="#">Previous</a></li>-->
+        <!--<li><a href="#">Next</a></li>-->
+      <!--</ul>-->
+    </div>
+  </div>
+
+</div>
+
+
+
+
