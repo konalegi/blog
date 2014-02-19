@@ -3,53 +3,60 @@
         <h1>Register</h1>
     </div>
 
-    <div ng-show="register_error.message" class="error">
-        <p>{{register_error.message}}</p>
+
+
+<div class="well">
+    <div class="form-group">
+        <label for="InputName">Name</label>
+        <input type="text" class="form-control" id="InputName" placeholder="Name" ng-model="name"/>
+    </div>
+
+    <div class="form-group">
+        <label for="InputSurname">Surname</label>
+        <input type="text" class="form-control" id="InputSurname" placeholder="Surname" ng-model="surname"/>
+    </div>
+
+    <div class="form-group">
+        <label for="InputBirthdate">Birthdate</label>
+        <input type="xte" class="form-control" id="InputBirthdate" placeholder="YYYY-MM-DD" ng-model="birthdate"/>
+    </div>
+
+    <div class="form-group">
+        <label for="InputSex">Sex</label>
+
+      <div class="radio">
+        <label>
+          <input type="radio" ng-model='sex' name="InputSex" id="optionsRadios1" value="1" checked>
+          Female
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" ng-model='sex' name="InputSex" id="optionsRadios2" value="0">
+          Male
+        </label>
+      </div>
     </div>
 
 
-    <div ng-class="{error: register_error.errors.name}">Name: <input ng-model="register_user.name" />
-        <div ng-show="register_error.errors.name">
-            <div ng-repeat="field_error in register_error.errors.name">{{field_error}}</div>
-        </div>
-    </div>
 
-    <div ng-class="{error: register_error.errors.surname}">Surname: <input ng-model="register_user.surname" />
-        <div ng-show="register_error.errors.surname">
-            <div ng-repeat="field_error in register_error.errors.surname">{{field_error}}</div>
-        </div>
-    </div>
 
-    <div ng-class="{error: register_error.errors.birthdate}">birthdate: <input ng-model="register_user.birthdate" />
-        <div ng-show="register_error.errors.birthdate">
-            <div ng-repeat="field_error in register_error.errors.birthdate">{{field_error}}</div>
-        </div>
-    </div>
-
-    <div ng-class="{error: register_error.errors.sex}">Sex: <input ng-model="register_user.sex" />
-        <div ng-show="register_error.errors.sex">
-            <div ng-repeat="field_error in register_error.errors.sex">{{field_error}}</div>
-        </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="InputEmail" placeholder="Email" ng-model="email"/>
     </div>
 
 
-    <div ng-class="{error: register_error.errors.email}">Email: <input ng-model="register_user.email" />
-        <div ng-show="register_error.errors.email">
-            <div ng-repeat="field_error in register_error.errors.email">{{field_error}}</div>
-        </div>
-    </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="InputPassword" placeholder="Password" ng-model="password"/>
+      </div>
 
-    <div ng-class="{error: register_error.errors.password}">Password: <input type="password" ng-model="register_user.password" />
-        <div ng-show="register_error.errors.password">
-            <div ng-repeat="field_error in register_error.errors.password">{{field_error}}</div>
-        </div>
-    </div>
-
-    <div ng-class="{error: register_error.errors.password_confirmation}">Confirm password: <input type="password" ng-model="register_user.password_confirmation" />
-        <div ng-show="register_error.errors.password_confirmation">
-            <div ng-repeat="field_error in register_error.errors.password_confirmation">{{field_error}}</div>
-        </div>
-    </div>
+      <div class="form-group">
+        <label for="InputPassword2">Password Confirmation</label>
+        <input type="password" class="form-control" id="InputPassword2" placeholder="Password Confirmation" ng-model="password_confirmation"/>
+      </div>
 
     <button ng-click="register()" class="btn btn-primary" >Register</button>
+</div>
 </div>

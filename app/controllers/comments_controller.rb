@@ -29,9 +29,14 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    :authenticate_user!
     @comment = Comment.create!(comment_params)
-
     respond_with @comment
+  end
+
+  def destroy
+    :authenticate_user!
+    respond_with Comment.destroy(params[:id])
   end
 
 

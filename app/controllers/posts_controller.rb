@@ -15,8 +15,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    authenticate_user!
+    :authenticate_user!
     respond_with Post.create(post_params)
+  end
+
+
+  def update
+    :authenticate_user!
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    respond_with @post
   end
 
   def destroy
@@ -26,7 +34,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    :authenticate_user!
     params[:post][:user_id]=current_user.id
     params.require(:post).permit(:title, :text_data, :user_id)
   end

@@ -1,5 +1,9 @@
-function HomeCtl($scope, $http, $location,Post) {
-    $scope.posts = Post.all();
+function InitCtl($scope,Session) {
+
+    $scope.init = function () {
+        Session.requestCurrentUser();
+    };
+
 }
 
-HomeCtl.$inject = ['$scope', '$http', '$location','Post'];
+InitCtl.$inject = ['$scope', 'Session'];

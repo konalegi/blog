@@ -8,7 +8,9 @@ class Comment < ActiveRecord::Base
     {
         :text_data => text_data,
         :user_name => user.name,
-        :created_at => created_at_formatted
+        :created_at => created_at_formatted,
+        :user_id => user.id,
+        :id => id
     }
   end
 end

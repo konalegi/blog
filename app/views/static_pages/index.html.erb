@@ -9,7 +9,7 @@
 
 <body>
 
-
+<div data-ng-controller="InitCtl" data-ng-init="init()"></div>
 
 <div id="navBar" ng-controller="NavBarCtl">
   <div class="blog-masthead">
@@ -30,13 +30,18 @@
 </div>
 
 
+<div class="container" >
 
+  <div class="blog-header">
+    <h1 class="blog-title">My Study Blog</h1>
+    <p class="lead blog-description">This is study project for learning Angular Js And Ruby On Rails.</p>
+  </div>
 
 
   <div ng-view="">
 
   </div>
-
+</div>
 
 
 

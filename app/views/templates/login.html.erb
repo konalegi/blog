@@ -1,37 +1,25 @@
-<div class="container">
-<div>
-  <h1>Login</h1>
-</div>
-<div ng-show="login_error.message" class="error">
-  <p>{{login_error}}</p>
-</div>
-
-<div class="body">
+<div class="well">
+  <div class="alert alert-danger" ng-show="error">{{error}}</div>
 
   <div >
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ng-model="login_user.email"/>
-      <div ng-show="login_error.errors.email">
-        <div ng-repeat="field_error in login_error.errors.email">{{field_error}}</div>
-      </div>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ng-model="email"/>
     </div>
 
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="login_user.password"/>
-      <div ng-show="login_error.errors.email">
-        <div ng-repeat="field_error in login_error.errors.email">{{field_error}}</div>
-      </div>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="password"/>
     </div>
   </div>
 
 
 
   <button  ng-click="login()" class="btn btn-primary" >Login</button>
-  <button  ng-click="logout()" class="btn btn-primary" >Logout</button>
-  <button n ng-click="singup()" class="btn btn-primary" >Register</button>
+  <!--<button  ng-click="logout()" class="btn btn-primary" >Logout</button>-->
+  <button  ng-click="singup()" class="btn btn-primary" >Register</button>
+</div>
 
 
-</div>
-</div>
+
+

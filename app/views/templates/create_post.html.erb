@@ -1,16 +1,21 @@
 <div class="container" >
 
 
+  <div class="alert alert-danger" ng-show="{{!isAuth}}">You dont have access to create new post!</div>
 
-  <div class="row">
+
+  <div class="row" ng-show="{{isAuth}}">
     <div class="col-sm-8 blog-main">
 
-      <div>Title: <textarea class="form-control" rows="2" ng-model="newPost.title" /></div>
+      <div>Title: <textarea class="form-control" rows="2" ng-model="post.title" /></div>
+      <div class="alert alert-danger" ng-show="{{error.title}}">{{error.title}}</div>
       <br>
-      <div>Text: <textarea class="form-control" rows="5" ng-model="newPost.textData" /></div>
+      <div>Text: <textarea class="form-control" rows="5" ng-model="post.text_data" /></div>
+      <div class="alert alert-danger" ng-show="{{error.text_data}}">{{error.text_data}}</div>
       <br>
 
-      <button ng-click="createPost()" class="btn btn-primary" >Create</button>
+      <button ng-show="{{!opennedForEdit}}" ng-click="createPost()" class="btn btn-primary" >Create</button>
+      <button ng-show="{{opennedForEdit}}" ng-click="updatePost()" class="btn btn-primary" >Update</button>
     </div>
   </div>
 

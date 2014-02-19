@@ -15,6 +15,7 @@
 //= require libs/angular-1.2.13/angular-route.js
 //= require libs/angular-1.2.13/angular-resource.js
 //= require libs/angular-1.2.13/angular-cookies.js
-//= require libs/bootstrap/bootstrap.js
 //= require_tree ./controllers
+//= require libs/bootstrap/bootstrap.js
+
 //= require app
